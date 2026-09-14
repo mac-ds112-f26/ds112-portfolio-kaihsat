@@ -305,9 +305,9 @@ cookieconsent.run({
 </section><section id="exercise-1-deduce-quarto-features" class="level2"><h2 class="anchored" data-anchor-id="exercise-1-deduce-quarto-features">Exercise 1: Deduce Quarto features</h2>
 <p>Check out the appearance and contents of this document. Thoughts?</p>
 <p>In the toolbar at the top of this document, <strong>Render</strong> the .qmd file into a .html file. Where is this file stored? Thoughts about its appearance / contents? Can you edit it?</p>
-<p>Toggling between the .qmd and .html files, explain the purpose of the following features in the .qmd file:</p>
-<p><code>*</code></p>
-<p><code>**</code></p>
+<p>You cant edit this file Toggling between the .qmd and .html files, explain the purpose of the following features in the .qmd file:</p>
+<p><code>*</code> *hello</p>
+<p><code>**</code> ** hello</p>
 <p><code>#</code></p>
 <p><code>-</code></p>
 <p><code>\</code></p>
@@ -315,36 +315,66 @@ cookieconsent.run({
 </section><section id="exercise-2-code" class="level2"><h2 class="anchored" data-anchor-id="exercise-2-code">Exercise 2: Code</h2>
 <p>How does this appear in the .qmd? The .html? So…?!</p>
 <p>seq(from = 100, to = 1000, by = 50)</p>
+<p>it just appears as code without any output</p>
 </section><section id="exercise-3-chunks" class="level2"><h2 class="anchored" data-anchor-id="exercise-3-chunks">Exercise 3: Chunks</h2>
 <p>Quarto isn’t a mind reader – we must distinguish R code from text. We do so by putting code inside an <strong>R chunk</strong>:</p>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">100</span>, <span class="at">to =</span> <span class="dv">1000</span>, <span class="at">by =</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code> [1]  100  150  200  250  300  350  400  450  500  550  600  650  700  750  800
+[16]  850  900  950 1000</code></pre>
+</div>
+</div>
 <ul>
 <li>Put the <code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> code in the chunk.</li>
 <li>Press the green arrow in the top right of the chunk. What happens in the qmd?</li>
-<li>Render. What appears in the html: R code, output, or both?</li>
+<li>Render. What appears in the html: R code, output, or both? both appear in the html</li>
 </ul></section><section id="exercise-4-practice" class="level2"><h2 class="anchored" data-anchor-id="exercise-4-practice">Exercise 4: Practice</h2>
 <ul>
 <li>Use R code to create the following sequence: 10 10 10 10</li>
 <li>Store the sequence as <code>four_tens</code>.</li>
 <li>Use an R function (which we haven’t learned!) to add up the numbers in <code>four_tens</code>.</li>
-</ul></section><section id="exercise-5-fix-this-code" class="level2"><h2 class="anchored" data-anchor-id="exercise-5-fix-this-code">Exercise 5: Fix this code</h2>
+</ul>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>four_tens <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">10</span>, <span class="dv">4</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">sum</span>(four_tens)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>[1] 40</code></pre>
+</div>
+</div>
+</section><section id="exercise-5-fix-this-code" class="level2"><h2 class="anchored" data-anchor-id="exercise-5-fix-this-code">Exercise 5: Fix this code</h2>
 <p>Code is a form of communication, and the code below doesn’t cut it.</p>
 <p>Put the code in a chunk and fix it.</p>
 <p>Rep(x = 1, times = 10) seq(from=100,to=1000,length=20) theNumberofStudentsinthisclass&lt;-27</p>
+<div class="cell">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">times =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code> [1] 1 1 1 1 1 1 1 1 1 1</code></pre>
+</div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">seq</span>(<span class="at">from=</span><span class="dv">100</span>,<span class="at">to=</span><span class="dv">1000</span>,<span class="at">length=</span><span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code> [1]  100.0000  147.3684  194.7368  242.1053  289.4737  336.8421  384.2105
+ [8]  431.5789  478.9474  526.3158  573.6842  621.0526  668.4211  715.7895
+[15]  763.1579  810.5263  857.8947  905.2632  952.6316 1000.0000</code></pre>
+</div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>theNumberofStudentsinthisclass<span class="ot">&lt;-</span><span class="dv">27</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section><section id="exercise-6-comments" class="level2"><h2 class="anchored" data-anchor-id="exercise-6-comments">Exercise 6: Comments</h2>
 <p>Run the chunk below. Notice that R ignores anything in a line starting with a pound sign (<code>#</code>). If we took the <code>#</code> away we’d get an error!</p>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># This is a comment</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="dv">4</span> <span class="sc">+</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># This is a comment</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="dv">4</span> <span class="sc">+</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>[1] 9</code></pre>
 </div>
 </div>
 <p>We’ll utilize this feature to <strong>comment our code</strong>, i.e.&nbsp;leave short notes about what our code is doing. Below, replace the <code>???</code> with an appropriate comment.</p>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># ???</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>temperature_c <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>temperature_f <span class="ot">&lt;-</span> temperature_c <span class="sc">*</span> <span class="dv">9</span><span class="sc">/</span><span class="dv">5</span> <span class="sc">+</span> <span class="dv">32</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>temperature_f</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Calculating temperature in F</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>temperature_c <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>temperature_f <span class="ot">&lt;-</span> temperature_c <span class="sc">*</span> <span class="dv">9</span><span class="sc">/</span><span class="dv">5</span> <span class="sc">+</span> <span class="dv">32</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>temperature_f</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code>[1] 50</code></pre>
 </div>
@@ -980,112 +1010,126 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="an">title:</span><span class="co"> "My first Quarto document"</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co">---</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">## Intro</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7"></a></span>
-<span id="cb5-8"><a href="#cb5-8"></a>**Macalester College** is in the *Twin Cities*.</span>
-<span id="cb5-9"><a href="#cb5-9"></a>It has:</span>
-<span id="cb5-10"><a href="#cb5-10"></a></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="ss">- </span>four seasons</span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="ss">- </span>bagpipes</span>
-<span id="cb5-13"><a href="#cb5-13"></a><span class="ss">- </span>delightful students</span>
-<span id="cb5-14"><a href="#cb5-14"></a></span>
-<span id="cb5-15"><a href="#cb5-15"></a>Check it out for yourself:</span>
-<span id="cb5-16"><a href="#cb5-16"></a></span>
-<span id="cb5-17"><a href="#cb5-17"></a><span class="al">![](https://www.macalester.edu/about/wp-content/uploads/sites/191/2019/12/campusmap336.png)</span></span>
-<span id="cb5-18"><a href="#cb5-18"></a></span>
-<span id="cb5-19"><a href="#cb5-19"></a></span>
-<span id="cb5-20"><a href="#cb5-20"></a></span>
-<span id="cb5-21"><a href="#cb5-21"></a></span>
-<span id="cb5-22"><a href="#cb5-22"></a></span>
-<span id="cb5-23"><a href="#cb5-23"></a><span class="fu">## Exercise 1: Deduce Quarto features</span></span>
-<span id="cb5-24"><a href="#cb5-24"></a></span>
-<span id="cb5-25"><a href="#cb5-25"></a>Check out the appearance and contents of this document. Thoughts?</span>
-<span id="cb5-26"><a href="#cb5-26"></a></span>
-<span id="cb5-27"><a href="#cb5-27"></a>In the toolbar at the top of this document, **Render** the .qmd file into a .html file. Where is this file stored? Thoughts about its appearance / contents? Can you edit it?</span>
-<span id="cb5-28"><a href="#cb5-28"></a></span>
-<span id="cb5-29"><a href="#cb5-29"></a>Toggling between the .qmd and .html files, explain the purpose of the following features in the .qmd file:        </span>
-<span id="cb5-30"><a href="#cb5-30"></a></span>
-<span id="cb5-31"><a href="#cb5-31"></a><span class="in">`*`</span></span>
-<span id="cb5-32"><a href="#cb5-32"></a></span>
-<span id="cb5-33"><a href="#cb5-33"></a><span class="in">`**`</span></span>
-<span id="cb5-34"><a href="#cb5-34"></a></span>
-<span id="cb5-35"><a href="#cb5-35"></a><span class="in">`#`</span></span>
-<span id="cb5-36"><a href="#cb5-36"></a></span>
-<span id="cb5-37"><a href="#cb5-37"></a><span class="in">`-`</span></span>
-<span id="cb5-38"><a href="#cb5-38"></a></span>
-<span id="cb5-39"><a href="#cb5-39"></a><span class="in">`\`</span></span>
-<span id="cb5-40"><a href="#cb5-40"></a></span>
-<span id="cb5-41"><a href="#cb5-41"></a><span class="in">`![](url)`</span></span>
-<span id="cb5-42"><a href="#cb5-42"></a></span>
-<span id="cb5-43"><a href="#cb5-43"></a></span>
-<span id="cb5-44"><a href="#cb5-44"></a></span>
-<span id="cb5-45"><a href="#cb5-45"></a><span class="fu">## Exercise 2: Code</span></span>
-<span id="cb5-46"><a href="#cb5-46"></a></span>
-<span id="cb5-47"><a href="#cb5-47"></a>How does this appear in the .qmd? The .html? So...?!</span>
-<span id="cb5-48"><a href="#cb5-48"></a></span>
-<span id="cb5-49"><a href="#cb5-49"></a>seq(from = 100, to = 1000, by = 50)</span>
-<span id="cb5-50"><a href="#cb5-50"></a></span>
-<span id="cb5-51"><a href="#cb5-51"></a></span>
-<span id="cb5-52"><a href="#cb5-52"></a></span>
-<span id="cb5-53"><a href="#cb5-53"></a><span class="fu">## Exercise 3: Chunks</span></span>
-<span id="cb5-54"><a href="#cb5-54"></a></span>
-<span id="cb5-55"><a href="#cb5-55"></a>Quarto isn't a mind reader -- we must distinguish R code from text.</span>
-<span id="cb5-56"><a href="#cb5-56"></a>We do so by putting code inside an **R chunk**:</span>
-<span id="cb5-57"><a href="#cb5-57"></a></span>
-<span id="cb5-60"><a href="#cb5-60"></a><span class="in">```{r}</span></span>
-<span id="cb5-61"><a href="#cb5-61"></a><span class="in">```</span></span>
-<span id="cb5-62"><a href="#cb5-62"></a></span>
-<span id="cb5-63"><a href="#cb5-63"></a><span class="ss">- </span>Put the <span class="in">`seq()`</span> code in the chunk.</span>
-<span id="cb5-64"><a href="#cb5-64"></a><span class="ss">- </span>Press the green arrow in the top right of the chunk. What happens in the qmd?</span>
-<span id="cb5-65"><a href="#cb5-65"></a><span class="ss">- </span>Render. What appears in the html: R code, output, or both?</span>
-<span id="cb5-66"><a href="#cb5-66"></a></span>
-<span id="cb5-67"><a href="#cb5-67"></a></span>
-<span id="cb5-68"><a href="#cb5-68"></a></span>
-<span id="cb5-69"><a href="#cb5-69"></a><span class="fu">## Exercise 4: Practice</span></span>
-<span id="cb5-70"><a href="#cb5-70"></a></span>
-<span id="cb5-71"><a href="#cb5-71"></a><span class="ss">- </span>Use R code to create the following sequence: 10 10 10 10</span>
-<span id="cb5-72"><a href="#cb5-72"></a><span class="ss">- </span>Store the sequence as <span class="in">`four_tens`</span>.</span>
-<span id="cb5-73"><a href="#cb5-73"></a><span class="ss">- </span>Use an R function (which we haven't learned!) to add up the numbers in <span class="in">`four_tens`</span>.</span>
-<span id="cb5-74"><a href="#cb5-74"></a></span>
-<span id="cb5-75"><a href="#cb5-75"></a></span>
-<span id="cb5-76"><a href="#cb5-76"></a></span>
-<span id="cb5-77"><a href="#cb5-77"></a><span class="fu">## Exercise 5: Fix this code</span></span>
-<span id="cb5-78"><a href="#cb5-78"></a></span>
-<span id="cb5-79"><a href="#cb5-79"></a>Code is a form of communication, and the code below doesn't cut it.</span>
-<span id="cb5-80"><a href="#cb5-80"></a></span>
-<span id="cb5-81"><a href="#cb5-81"></a>Put the code in a chunk and fix it.</span>
-<span id="cb5-82"><a href="#cb5-82"></a></span>
-<span id="cb5-83"><a href="#cb5-83"></a>Rep(x = 1, times = 10)</span>
-<span id="cb5-84"><a href="#cb5-84"></a>seq(from=100,to=1000,length=20)</span>
-<span id="cb5-85"><a href="#cb5-85"></a>theNumberofStudentsinthisclass&lt;-27</span>
-<span id="cb5-86"><a href="#cb5-86"></a></span>
-<span id="cb5-87"><a href="#cb5-87"></a></span>
-<span id="cb5-88"><a href="#cb5-88"></a></span>
-<span id="cb5-89"><a href="#cb5-89"></a><span class="fu">## Exercise 6: Comments</span></span>
-<span id="cb5-90"><a href="#cb5-90"></a></span>
-<span id="cb5-91"><a href="#cb5-91"></a>Run the chunk below.</span>
-<span id="cb5-92"><a href="#cb5-92"></a>Notice that R ignores anything in a line starting with a pound sign (<span class="in">`#`</span>).</span>
-<span id="cb5-93"><a href="#cb5-93"></a>If we took the <span class="in">`#`</span> away we'd get an error!</span>
-<span id="cb5-94"><a href="#cb5-94"></a></span>
-<span id="cb5-97"><a href="#cb5-97"></a><span class="in">```{r}</span></span>
-<span id="cb5-98"><a href="#cb5-98"></a><span class="co"># This is a comment</span></span>
-<span id="cb5-99"><a href="#cb5-99"></a><span class="dv">4</span> <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb5-100"><a href="#cb5-100"></a><span class="in">```</span></span>
-<span id="cb5-101"><a href="#cb5-101"></a></span>
-<span id="cb5-102"><a href="#cb5-102"></a>We'll utilize this feature to **comment our code**, i.e. leave short notes about what our code is doing.</span>
-<span id="cb5-103"><a href="#cb5-103"></a>Below, replace the <span class="in">`???`</span> with an appropriate comment.</span>
-<span id="cb5-104"><a href="#cb5-104"></a></span>
-<span id="cb5-107"><a href="#cb5-107"></a><span class="in">```{r}</span></span>
-<span id="cb5-108"><a href="#cb5-108"></a><span class="co"># ???</span></span>
-<span id="cb5-109"><a href="#cb5-109"></a>temperature_c <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb5-110"><a href="#cb5-110"></a>temperature_f <span class="ot">&lt;-</span> temperature_c <span class="sc">*</span> <span class="dv">9</span><span class="sc">/</span><span class="dv">5</span> <span class="sc">+</span> <span class="dv">32</span></span>
-<span id="cb5-111"><a href="#cb5-111"></a>temperature_f</span>
-<span id="cb5-112"><a href="#cb5-112"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb14" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a><span class="co">---</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="an">title:</span><span class="co"> "My first Quarto document"</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="co">---</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a></span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="fu">## Intro</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a></span>
+<span id="cb14-7"><a href="#cb14-7"></a></span>
+<span id="cb14-8"><a href="#cb14-8"></a>**Macalester College** is in the *Twin Cities*.</span>
+<span id="cb14-9"><a href="#cb14-9"></a>It has:</span>
+<span id="cb14-10"><a href="#cb14-10"></a></span>
+<span id="cb14-11"><a href="#cb14-11"></a><span class="ss">- </span>four seasons</span>
+<span id="cb14-12"><a href="#cb14-12"></a><span class="ss">- </span>bagpipes</span>
+<span id="cb14-13"><a href="#cb14-13"></a><span class="ss">- </span>delightful students</span>
+<span id="cb14-14"><a href="#cb14-14"></a></span>
+<span id="cb14-15"><a href="#cb14-15"></a>Check it out for yourself:</span>
+<span id="cb14-16"><a href="#cb14-16"></a></span>
+<span id="cb14-17"><a href="#cb14-17"></a><span class="al">![](https://www.macalester.edu/about/wp-content/uploads/sites/191/2019/12/campusmap336.png)</span></span>
+<span id="cb14-18"><a href="#cb14-18"></a></span>
+<span id="cb14-19"><a href="#cb14-19"></a></span>
+<span id="cb14-20"><a href="#cb14-20"></a></span>
+<span id="cb14-21"><a href="#cb14-21"></a></span>
+<span id="cb14-22"><a href="#cb14-22"></a></span>
+<span id="cb14-23"><a href="#cb14-23"></a><span class="fu">## Exercise 1: Deduce Quarto features</span></span>
+<span id="cb14-24"><a href="#cb14-24"></a></span>
+<span id="cb14-25"><a href="#cb14-25"></a>Check out the appearance and contents of this document. Thoughts?</span>
+<span id="cb14-26"><a href="#cb14-26"></a></span>
+<span id="cb14-27"><a href="#cb14-27"></a>In the toolbar at the top of this document, **Render** the .qmd file into a .html file. Where is this file stored? Thoughts about its appearance / contents? Can you edit it?</span>
+<span id="cb14-28"><a href="#cb14-28"></a></span>
+<span id="cb14-29"><a href="#cb14-29"></a>You cant edit this file</span>
+<span id="cb14-30"><a href="#cb14-30"></a>Toggling between the .qmd and .html files, explain the purpose of the following features in the .qmd file:        </span>
+<span id="cb14-31"><a href="#cb14-31"></a></span>
+<span id="cb14-32"><a href="#cb14-32"></a><span class="in">`*`</span> *hello</span>
+<span id="cb14-33"><a href="#cb14-33"></a></span>
+<span id="cb14-34"><a href="#cb14-34"></a><span class="in">`**`</span> ** hello</span>
+<span id="cb14-35"><a href="#cb14-35"></a></span>
+<span id="cb14-36"><a href="#cb14-36"></a><span class="in">`#`</span></span>
+<span id="cb14-37"><a href="#cb14-37"></a></span>
+<span id="cb14-38"><a href="#cb14-38"></a><span class="in">`-`</span></span>
+<span id="cb14-39"><a href="#cb14-39"></a></span>
+<span id="cb14-40"><a href="#cb14-40"></a><span class="in">`\`</span></span>
+<span id="cb14-41"><a href="#cb14-41"></a></span>
+<span id="cb14-42"><a href="#cb14-42"></a><span class="in">`![](url)`</span></span>
+<span id="cb14-43"><a href="#cb14-43"></a></span>
+<span id="cb14-44"><a href="#cb14-44"></a></span>
+<span id="cb14-45"><a href="#cb14-45"></a></span>
+<span id="cb14-46"><a href="#cb14-46"></a><span class="fu">## Exercise 2: Code</span></span>
+<span id="cb14-47"><a href="#cb14-47"></a></span>
+<span id="cb14-48"><a href="#cb14-48"></a>How does this appear in the .qmd? The .html? So...?!</span>
+<span id="cb14-49"><a href="#cb14-49"></a></span>
+<span id="cb14-50"><a href="#cb14-50"></a>seq(from = 100, to = 1000, by = 50)</span>
+<span id="cb14-51"><a href="#cb14-51"></a></span>
+<span id="cb14-52"><a href="#cb14-52"></a>it just appears as code without any output</span>
+<span id="cb14-53"><a href="#cb14-53"></a></span>
+<span id="cb14-54"><a href="#cb14-54"></a><span class="fu">## Exercise 3: Chunks</span></span>
+<span id="cb14-55"><a href="#cb14-55"></a></span>
+<span id="cb14-56"><a href="#cb14-56"></a>Quarto isn't a mind reader -- we must distinguish R code from text.</span>
+<span id="cb14-57"><a href="#cb14-57"></a>We do so by putting code inside an **R chunk**:</span>
+<span id="cb14-58"><a href="#cb14-58"></a></span>
+<span id="cb14-61"><a href="#cb14-61"></a><span class="in">```{r}</span></span>
+<span id="cb14-62"><a href="#cb14-62"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">100</span>, <span class="at">to =</span> <span class="dv">1000</span>, <span class="at">by =</span> <span class="dv">50</span>)</span>
+<span id="cb14-63"><a href="#cb14-63"></a></span>
+<span id="cb14-64"><a href="#cb14-64"></a></span>
+<span id="cb14-65"><a href="#cb14-65"></a><span class="in">```</span></span>
+<span id="cb14-66"><a href="#cb14-66"></a></span>
+<span id="cb14-67"><a href="#cb14-67"></a><span class="ss">- </span>Put the <span class="in">`seq()`</span> code in the chunk.</span>
+<span id="cb14-68"><a href="#cb14-68"></a><span class="ss">- </span>Press the green arrow in the top right of the chunk. What happens in the qmd?</span>
+<span id="cb14-69"><a href="#cb14-69"></a><span class="ss">- </span>Render. What appears in the html: R code, output, or both?</span>
+<span id="cb14-70"><a href="#cb14-70"></a>both appear in the html</span>
+<span id="cb14-71"><a href="#cb14-71"></a></span>
+<span id="cb14-72"><a href="#cb14-72"></a></span>
+<span id="cb14-73"><a href="#cb14-73"></a><span class="fu">## Exercise 4: Practice</span></span>
+<span id="cb14-74"><a href="#cb14-74"></a></span>
+<span id="cb14-75"><a href="#cb14-75"></a><span class="ss">- </span>Use R code to create the following sequence: 10 10 10 10</span>
+<span id="cb14-76"><a href="#cb14-76"></a><span class="ss">- </span>Store the sequence as <span class="in">`four_tens`</span>.</span>
+<span id="cb14-77"><a href="#cb14-77"></a><span class="ss">- </span>Use an R function (which we haven't learned!) to add up the numbers in <span class="in">`four_tens`</span>.</span>
+<span id="cb14-78"><a href="#cb14-78"></a></span>
+<span id="cb14-81"><a href="#cb14-81"></a><span class="in">```{r}</span></span>
+<span id="cb14-82"><a href="#cb14-82"></a>four_tens <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">10</span>, <span class="dv">4</span>)</span>
+<span id="cb14-83"><a href="#cb14-83"></a><span class="fu">sum</span>(four_tens)</span>
+<span id="cb14-84"><a href="#cb14-84"></a><span class="in">```</span></span>
+<span id="cb14-85"><a href="#cb14-85"></a></span>
+<span id="cb14-86"><a href="#cb14-86"></a></span>
+<span id="cb14-87"><a href="#cb14-87"></a><span class="fu">## Exercise 5: Fix this code</span></span>
+<span id="cb14-88"><a href="#cb14-88"></a></span>
+<span id="cb14-89"><a href="#cb14-89"></a>Code is a form of communication, and the code below doesn't cut it.</span>
+<span id="cb14-90"><a href="#cb14-90"></a></span>
+<span id="cb14-91"><a href="#cb14-91"></a>Put the code in a chunk and fix it.</span>
+<span id="cb14-92"><a href="#cb14-92"></a></span>
+<span id="cb14-93"><a href="#cb14-93"></a>Rep(x = 1, times = 10)</span>
+<span id="cb14-94"><a href="#cb14-94"></a>seq(from=100,to=1000,length=20)</span>
+<span id="cb14-95"><a href="#cb14-95"></a>theNumberofStudentsinthisclass&lt;-27</span>
+<span id="cb14-96"><a href="#cb14-96"></a></span>
+<span id="cb14-99"><a href="#cb14-99"></a><span class="in">```{r}</span></span>
+<span id="cb14-100"><a href="#cb14-100"></a><span class="fu">rep</span>(<span class="at">x =</span> <span class="dv">1</span>, <span class="at">times =</span> <span class="dv">10</span>)</span>
+<span id="cb14-101"><a href="#cb14-101"></a><span class="fu">seq</span>(<span class="at">from=</span><span class="dv">100</span>,<span class="at">to=</span><span class="dv">1000</span>,<span class="at">length=</span><span class="dv">20</span>)</span>
+<span id="cb14-102"><a href="#cb14-102"></a>theNumberofStudentsinthisclass<span class="ot">&lt;-</span><span class="dv">27</span></span>
+<span id="cb14-103"><a href="#cb14-103"></a><span class="in">```</span></span>
+<span id="cb14-104"><a href="#cb14-104"></a></span>
+<span id="cb14-105"><a href="#cb14-105"></a></span>
+<span id="cb14-106"><a href="#cb14-106"></a></span>
+<span id="cb14-107"><a href="#cb14-107"></a><span class="fu">## Exercise 6: Comments</span></span>
+<span id="cb14-108"><a href="#cb14-108"></a></span>
+<span id="cb14-109"><a href="#cb14-109"></a>Run the chunk below.</span>
+<span id="cb14-110"><a href="#cb14-110"></a>Notice that R ignores anything in a line starting with a pound sign (<span class="in">`#`</span>).</span>
+<span id="cb14-111"><a href="#cb14-111"></a>If we took the <span class="in">`#`</span> away we'd get an error!</span>
+<span id="cb14-112"><a href="#cb14-112"></a></span>
+<span id="cb14-115"><a href="#cb14-115"></a><span class="in">```{r}</span></span>
+<span id="cb14-116"><a href="#cb14-116"></a><span class="co"># This is a comment</span></span>
+<span id="cb14-117"><a href="#cb14-117"></a><span class="dv">4</span> <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb14-118"><a href="#cb14-118"></a><span class="in">```</span></span>
+<span id="cb14-119"><a href="#cb14-119"></a></span>
+<span id="cb14-120"><a href="#cb14-120"></a>We'll utilize this feature to **comment our code**, i.e. leave short notes about what our code is doing.</span>
+<span id="cb14-121"><a href="#cb14-121"></a>Below, replace the <span class="in">`???`</span> with an appropriate comment.</span>
+<span id="cb14-122"><a href="#cb14-122"></a></span>
+<span id="cb14-125"><a href="#cb14-125"></a><span class="in">```{r}</span></span>
+<span id="cb14-126"><a href="#cb14-126"></a><span class="co"># Calculating temperature in F</span></span>
+<span id="cb14-127"><a href="#cb14-127"></a>temperature_c <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb14-128"><a href="#cb14-128"></a>temperature_f <span class="ot">&lt;-</span> temperature_c <span class="sc">*</span> <span class="dv">9</span><span class="sc">/</span><span class="dv">5</span> <span class="sc">+</span> <span class="dv">32</span></span>
+<span id="cb14-129"><a href="#cb14-129"></a>temperature_f</span>
+<span id="cb14-130"><a href="#cb14-130"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
