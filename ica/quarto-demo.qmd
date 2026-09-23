@@ -26,11 +26,12 @@ Check out the appearance and contents of this document. Thoughts?
 
 In the toolbar at the top of this document, **Render** the .qmd file into a .html file. Where is this file stored? Thoughts about its appearance / contents? Can you edit it?
 
+You cant edit this file
 Toggling between the .qmd and .html files, explain the purpose of the following features in the .qmd file:        
 
-`*`
+`*` *hello
 
-`**`
+`**` ** hello
 
 `#`
 
@@ -48,7 +49,7 @@ How does this appear in the .qmd? The .html? So...?!
 
 seq(from = 100, to = 1000, by = 50)
 
-
+it just appears as code without any output
 
 ## Exercise 3: Chunks
 
@@ -56,13 +57,15 @@ Quarto isn't a mind reader -- we must distinguish R code from text.
 We do so by putting code inside an **R chunk**:
 
 ```{r}
+seq(from = 100, to = 1000, by = 50)
+
 
 ```
 
 - Put the `seq()` code in the chunk.
 - Press the green arrow in the top right of the chunk. What happens in the qmd?
 - Render. What appears in the html: R code, output, or both?
-
+both appear in the html
 
 
 ## Exercise 4: Practice
@@ -71,6 +74,10 @@ We do so by putting code inside an **R chunk**:
 - Store the sequence as `four_tens`.
 - Use an R function (which we haven't learned!) to add up the numbers in `four_tens`.
 
+```{r}
+four_tens <- rep(10, 4)
+sum(four_tens)
+```
 
 
 ## Exercise 5: Fix this code
@@ -82,6 +89,12 @@ Put the code in a chunk and fix it.
 Rep(x = 1, times = 10)
 seq(from=100,to=1000,length=20)
 theNumberofStudentsinthisclass<-27
+
+```{r}
+rep(x = 1, times = 10)
+seq(from=100,to=1000,length=20)
+theNumberofStudentsinthisclass<-27
+```
 
 
 
@@ -100,7 +113,7 @@ We'll utilize this feature to **comment our code**, i.e. leave short notes about
 Below, replace the `???` with an appropriate comment.
 
 ```{r}
-# ???
+# Calculating temperature in F
 temperature_c <- 10
 temperature_f <- temperature_c * 9/5 + 32
 temperature_f
