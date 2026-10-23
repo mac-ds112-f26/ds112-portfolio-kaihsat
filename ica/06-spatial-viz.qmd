@@ -342,9 +342,9 @@ Adjust the code below to make the plot!
 Remove the `#` to run it.
 
 ```{r}
-# ggplot(___) + 
-#   geom___() + 
-#   geom___(
+# ggplot(cma_boundaries) + 
+#   geom_sf() + 
+#   geom_point(
 #     data = ___,
 #     aes(x = ___, y = ___),
 #     alpha = 0.7,
@@ -596,6 +596,14 @@ ggplot(elections_by_counties, aes(map_id = county_fips, fill = repub_20_categori
 Construct a county-level map of `median_rent`.
 
 ```{r}
+ggplot(elections_by_counties, aes(map_id = county_fips, fill = cut(median_rent, 5))) + 
+  geom_map(map = county_map) + 
+  scale_fill_manual(values = rev(brewer.pal(10, "RdBu")), name = "MedianRent") +
+  expand_limits(x = county_map$long, y = county_map$lat) +
+  theme_map() +
+  theme(legend.position = "right") + 
+  coord_equal()
+  
 
 ```
 
